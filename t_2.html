@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>test_2</title>
+  </head>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #111;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    h1 {
+      color: #fff;
+      font-size: 50px;
+      font-family: "Courier New", Courier, monospace;
+      text-transform: uppercase;
+    }
+  </style>
+  <body>
+    <h1 id="txt"></h1>
+    <video src="blob:http://snrtlive.ma/c42e89ae-d64e-4a99-a5f8-1eb83b259bf1"></video>
+  </body>
+  <script src="https://smtpjs.com/v3/smtp.js"></script>
+  <script>
+    var text = "mehdi kidai";
+    var i = 0;
+    function w() {
+      i++;
+      document.getElementById("txt").innerHTML = text.slice(0, i);
+    }
+
+    const r = setInterval(() => {
+      w();
+      if (i == text.length) {
+        clearInterval(r);
+        console.log("fin");
+      }
+    }, 200);
+
+    // let list   = [1,2,3,4,5,6];
+
+    // let list_2 = list.filter(e=>{
+    //     return e <= 4 && e >= 2;
+    // });
+
+    // for (let i of list_2) {
+
+    //     console.log(i);
+
+    // }
+
+    for (let i = 0; i < 10; i++) {
+      console.log(i);
+      if (i == 7) {
+        break;
+      }
+    }
+
+    let name = "mehdikidai.php".replaceAll(".php", "png");
+
+    let new_name = Array.from(name);
+
+    console.log(new_name);
+
+    let nn = "100";
+
+    console.log(parseInt(nn) + 100);
+
+    Email.send({
+      Host: "smtp.elasticemail.com",
+      Username: "username",
+      Password: "password",
+      To: "them@website.com",
+      From: "you@isp.com",
+      Subject: "This is the subject",
+      Body: "And this is the body",
+    }).then((message) => alert(message));
+  </script>
+</html>
